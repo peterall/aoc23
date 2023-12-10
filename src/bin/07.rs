@@ -1,4 +1,4 @@
-use std::{cmp::Ordering, collections::HashSet};
+use std::cmp::Ordering;
 
 use nom::{
     bytes::complete::take,
@@ -204,7 +204,7 @@ pub fn part_two(input: &str) -> Option<u32> {
     hands
         .iter()
         .enumerate()
-        .map(|(i, (cards, bet))| bet * (i as u32 + 1))
+        .map(|(i, (_, bet))| bet * (i as u32 + 1))
         .sum::<u32>()
         .into()
 }
